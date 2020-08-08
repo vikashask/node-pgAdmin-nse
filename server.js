@@ -25,6 +25,15 @@ require("./config/knex")(app);
 const stockController = require("./controllers/stockController");
 let version = process.env.VERSION ? process.env.VERSION : "/V1";
 
+app.get(
+  `${version}/get-data`,
+  stockController.test
+);
+
+app.get(
+  `${version}/add-stock-data`,
+  stockController.addStockData
+);
 
 var routes = require("./routes");
 app.use(`${version}` + "/", routes);
