@@ -22,6 +22,12 @@ app.use(cors()); //enable cores
 
 require("./config/knex")(app);
 
+const stockController = require("./controllers/stockController");
+let version = process.env.VERSION ? process.env.VERSION : "/V1";
+
+
+var routes = require("./routes");
+app.use(`${version}` + "/", routes);
 
 var server = http.createServer(app);
 
