@@ -35,8 +35,8 @@ app.get(
   stockController.addStockData
 );
 
-var routes = require("./routes");
-app.use(`${version}` + "/", routes);
+// var routes = require("./routes");
+// app.use(`${version}` + "/", routes);
 
 var server = http.createServer(app);
 
